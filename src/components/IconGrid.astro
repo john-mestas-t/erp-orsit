@@ -1,0 +1,81 @@
+---
+const icons = [
+  { name: 'AD', color: '#fbbf24', url: 'https://script.google.com/macros/s/AKfycbx1Ji3QROYG9COq_otShPrCNMGANV2qIXypmG5eLuaKTrpbqS7Ot0I4q2b-8Wpmm_Vx/exec' },
+  { name: 'Mantenimiento', color: '#f59e0b', url: 'https://example.com/item' },
+  { name: 'Contrata', color: '#10b981', url: 'https://example.com/customer' },
+  { name: 'Oxi', color: '#8b5cf6', url: 'https://example.com/file-manager' },
+  { name: 'Supplier', color: '#ef4444', url: 'https://example.com/supplier' },
+  { name: 'Website', color: '#10b981', url: 'https://example.com/website' },
+  { name: 'Employee', color: '#10b981', url: 'https://example.com/employee' },
+  { name: 'Project', color: '#8b5cf6', url: 'https://example.com/project' },
+  { name: 'Issue', color: '#1f2937', url: 'https://example.com/issue' },
+  { name: 'Lead', color: '#3b82f6', url: 'https://example.com/lead' },
+  { name: 'Profit and Loss Stat...', color: '#3b82f6', url: 'https://example.com/profit-loss' },
+  { name: 'Accounts', color: '#3b82f6', url: 'https://example.com/accounts' },
+  { name: 'Stock', color: '#f59e0b', url: 'https://example.com/stock' },
+  { name: 'CRM', color: '#ec4899', url: 'https://example.com/crm' },
+  { name: 'Selling', color: '#10b981', url: 'https://example.com/selling' },
+  { name: 'Buying', color: '#ef4444', url: 'https://example.com/buying' },
+  { name: 'Human Resources', color: '#10b981', url: 'https://example.com/hr' },
+  { name: 'Manufacturing', color: '#6b7280', url: 'https://example.com/manufacturing' },
+  { name: 'POS', color: '#10b981', url: 'https://example.com/pos' },
+  { name: 'Projects', color: '#8b5cf6', url: 'https://example.com/projects' },
+  { name: 'Support', color: '#1f2937', url: 'https://example.com/support' },
+  { name: 'Learn', color: '#f87171', url: 'https://example.com/learn' },
+  { name: 'Maintenance', color: '#f87171', url: 'https://example.com/maintenance' },
+  { name: 'Explore', color: '#6366f1', url: 'https://example.com/explore' },
+];
+---
+
+<div class="icon-grid">
+    {icons.map((icon) => (
+    <a href={icon.url} class="icon" target="_blank" rel="noopener noreferrer">
+        <div class="icon-bg" style={`background-color: ${icon.color}`}>
+        {icon.name.charAt(0)}
+        </div>
+        <span class="icon-name">{icon.name}</span>
+    </a>
+    ))}
+</div>
+
+<style>
+  .icon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+    margin-bottom: 1.5rem;
+  }
+  .icon:hover {
+    transform: scale(1.05);
+  }
+  .icon-bg {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+  }
+  .icon-name {
+    font-size: 0.8rem;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+</style>
